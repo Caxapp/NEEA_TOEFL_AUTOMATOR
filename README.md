@@ -1,3 +1,5 @@
+增加语音播报（百度api）和循环扫描。
+
 # NEEA_TOEFL_AUTOMATOR
 
 - author: Yuanfei Pan
