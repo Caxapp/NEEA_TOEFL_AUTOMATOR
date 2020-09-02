@@ -2,10 +2,19 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms))
 }
 
+function playAudio(text){
+        const url = "http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&text=" + encodeURI(text);      
+        const audio = new Audio(url);
+        audio.src = url;
+        audio.play();
+        return audio;
+}
+
 city = document.getElementById("centerProvinceCity")
 day = document.getElementById("testDays")
 btn_query = document.getElementById("btnQuerySeat")
 
+while (true) {
 for (i = 1; i < city.options.length; ++i) {
     city.options[i].selected = true
     //for (j = 1; j < day.options.length; ++j) {
@@ -19,12 +28,18 @@ for (i = 1; i < city.options.length; ++i) {
             tb = tables[0]
             for (row = 2; row < tb.rows.length; ++row) {
                 if (tb.rows[row].cells[3].innerText == "有名额") {
+              		playAudio(city.options[i].innerText);
+              		playAudio(day.options[j].innerText);
+              		playAudio(tb.rows[row].cells[1].innerText);
+              		playAudio(tb.rows[row].cells[2].innerText);
+              		playAudio(tb.rows[row].cells[3].innerText);
                     console.log(
                         city.options[i].innerText,
                         day.options[j].innerText,
                         tb.rows[row].cells[1].innerText,
                         tb.rows[row].cells[2].innerText,
                         tb.rows[row].cells[3].innerText)
+                     }
                 }
             }
         }
