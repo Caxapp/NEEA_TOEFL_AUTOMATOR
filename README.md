@@ -1,4 +1,8 @@
-增加语音播报（百度api）和循环扫描。
+- 增加语音播报（百度api）和循环扫描。
+
+**To do:**
+- telegram 频道推送考位信息
+- 短信通知
 
 # NEEA_TOEFL_AUTOMATOR
 
