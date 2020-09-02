@@ -28,11 +28,7 @@ for (i = 1; i < city.options.length; ++i) {
             tb = tables[0]
             for (row = 2; row < tb.rows.length; ++row) {
                 if (tb.rows[row].cells[3].innerText == "有名额") {
-              		playAudio(city.options[i].innerText);
-              		playAudio(day.options[j].innerText);
-              		playAudio(tb.rows[row].cells[1].innerText);
-              		playAudio(tb.rows[row].cells[2].innerText);
-              		playAudio(tb.rows[row].cells[3].innerText);
+              		playAudio(city.options[i].innerText + day.options[j].innerText + tb.rows[row].cells[1].innerText + tb.rows[row].cells[2].innerText + tb.rows[row].cells[3].innerText);
                     console.log(
                         city.options[i].innerText,
                         day.options[j].innerText,
